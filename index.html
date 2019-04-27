@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>todolist</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id = "app">
+           <h1>todolist</h1>
+           <input type="text" v-model = "newthing">
+           <button v-on:click = "addItem">add</button>
+           <span id = "care"></span>
+           <ul>
+              <li v-for = "(todo,index) in todos">  
+                  <input type="checkbox" v-model = "todo.isDone" >
+                  <span v-bind:class = "{done : todo.isDone}"> {{todo.Item}}</span>
+                  <button v-on:click = "delItem(index)">DELETE</button>
+              </li>
+           </ul>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <script src = "main.js"></script>
+    </body>
+</html>
